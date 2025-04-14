@@ -1,0 +1,156 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #88bafa;
+  color: #323330;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+  color: darkmagenta;
+  font-weight: bolder;
+}
+
+li {
+  color: darkmagenta;
+  font-weight: bolder;
+}
+
+/* ------- Custom scrollbar for WebKit browsers (Chrome, Safari, Edge) ------- */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 30px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #d1e5ff !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#642bff, #ff22e6) !important;
+  border-radius: 10px;
+  min-height: 250px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#5429c9, #e01fcc) !important;
+}
+
+/* ------- Custom scrollbar for Firefox (using standard properties) ------- */
+/* Firefox uses different properties, but you can style the scrollbar area */
+/* You can only change the color of the scrollbar area, not the thumb */
+/* html {
+  scrollbar-color: $scrollbar-thumb-start $scrollbar-track-color;
+} */ /* uncomment this to change firefox scrollbar color */
+.concept {
+  background-color: #f8f9fa;
+  border-left: 5px solid #5429c9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+.exercise {
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.exercise h3 {
+  margin-top: 0;
+}
+
+code {
+  background-color: #f8f9fa;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+pre {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.solution-btn,
+.run-btn {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.solution-btn {
+  background-color: #333;
+  color: white;
+}
+
+.run-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.solution {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #5429c9;
+  border-radius: 5px;
+}
+
+.try-it {
+  margin-top: 15px;
+  border-top: 1px dashed #dee2e6;
+  padding-top: 15px;
+}
+
+.playground {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  resize: vertical;
+}
+
+.output {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  min-height: 50px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.concept-group {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #5429c9;
+  padding-bottom: 20px;
+}
+
+.concept-title {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #5429c9;
+  padding-bottom: 5px;
+}/*# sourceMappingURL=style.css.map */

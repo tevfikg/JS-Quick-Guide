@@ -1,0 +1,169 @@
+$primary-text-color: #333;
+$header-bg-color: #88b9fa;
+$header-text-color: #323330;
+$heading-color: darkmagenta;
+$concept-border-color: #5429c9;
+$solution-bg-color: #5429c9;
+//ScrollBar Colors
+$scrollbar-track-color: #d1fdff;
+$scrollbar-thumb-start: #642bff;
+$scrollbar-thumb-end: #ff22e6;
+$scrollbar-thumb-hover-start: #5429c9;
+$scrollbar-thumb-hover-end: #e01fcc;
+
+$exercise-bg: #e9ecef;
+$border-color: #dee2e6;
+$success-btn-color: #28a745;
+$all-btn-text: #eceeee;
+
+* {
+    background-color: #e4eefe!important;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: $primary-text-color;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: $header-bg-color;
+    color: $header-text-color;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: $heading-color;
+    font-weight: bolder;
+}
+
+li {
+    color: $heading-color;
+    font-weight: bolder;
+}
+
+/* ------- Custom scrollbar for WebKit browsers (Chrome, Safari, Edge) ------- */
+::-webkit-scrollbar {
+    width: 12px !important;
+    height: 30px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: $scrollbar-track-color !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient($scrollbar-thumb-start, $scrollbar-thumb-end) !important;
+    border-radius: 10px;
+    min-height: 250px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient($scrollbar-thumb-hover-start, $scrollbar-thumb-hover-end) !important;
+}
+
+.concept {
+    background-color: $light-bg;
+    border-left: 5px solid $concept-border-color;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+.exercise {
+    background-color: $exercise-bg;
+    border: 1px solid $border-color;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+  
+    h3 {
+      margin-top: 0;
+    }
+}
+
+code {
+    background-color: $light-bg;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+    background-color: $light-bg;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.run-btn {
+    background-color: $success-btn-color;
+    color: $all-btn-text;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+    
+}
+
+.solution {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: $solution-bg-color;
+    border-radius: 5px;
+
+    &.btn {
+        background-color: $primary-text-color;
+        color:$all-btn-text;
+    }
+}
+
+.try-it {
+    margin-top: 15px;
+    border-top: 1px dashed $border-color;
+    padding-top: 15px;
+}
+
+.playground {
+    width: 100%;
+    height: 150px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    resize: vertical;
+}
+
+.output {
+    background-color: $light-bg;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.concept-group {
+    margin-bottom: 30px;
+    border-bottom: 2px solid $concept-border-color;
+    padding-bottom: 20px;
+}
+
+.concept-title {
+    margin-bottom: 10px;
+    border-bottom: 2px solid $concept-border-color;
+    padding-bottom: 5px;
+}

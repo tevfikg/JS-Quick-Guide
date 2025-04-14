@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript Fundamentals</h1>
+        <h2>Learn Key JavaScript Concepts Quickly</h2>
+    </header>
+
+    <section>
+        <h2>What is JavaScript?</h2>
+        <p>JavaScript is a dynamic programming language that's used for web development, in web applications, for game
+            development, and lots more. It allows you to implement complex features on web pages - every time a web page
+            does more than just sit there and display static information, JavaScript is probably involved.</p>
+        <p>ECMAScript 2015 (ES6), released in June 2015, represents a significant standardization of JavaScript,
+            introducing a suite of novel features. Key additions include class-based syntax for object-oriented
+            programming, arrow functions for concise function expressions, block-scoped variable declarations via let
+            and const, template literals for enhanced string interpolation, destructuring assignment for efficient data
+            extraction, a standardized module system for code organization, and Promises for streamlined asynchronous
+            operations. ES6 established a foundational paradigm shift for modern JavaScript development.</p><br>
+        <p><b>This webpage focuses on the key fundamentals of JavaScript for a quick understanding.</b></p> <br>
+        <h2>Key JavaScript Fundamentals and Practical Implementation</h2>
+        <ol>
+            <li>Variables and Data Types</li>
+            <li>Functions</li>
+            <li>Conditional Statements</li>
+            <li>Loops</li>
+            <li>Array Methods</li>
+            <li>DOM Manipulation</li>
+            <li>Destructuring</li>
+            <li>Built-in Methods</li>
+            <li>Date Objects</li>
+            <li>Regular Expressions</li>
+            <li>Type Conversions</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Key Concepts</h2>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">1. Variables and Data Types</h3>
+                <p>Variables are containers for storing data values. Modern JavaScript has three ways to declare
+                    variables:</p>
+                <pre>
+// Variables
+let name = "John";  // Can be reassigned
+const age = 30;     // Cannot be reassigned
+var old = true;     // Older way, function scoped
+
+// Data Types
+let string = "Hello";            // String
+let number = 42;                 // Number
+let boolean = true;              // Boolean
+let array = [1, 2, 3];           // Array
+let object = {name: "John"};     // Object
+let nothing = null;              // Null
+let undefined_var;               // Undefined
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Variable Declaration</h3>
+                <p>Create variables for a person's first name, last name, and age. Then create a function that returns a
+                    greeting message using all three variables.</p>
+                <button class="solution-btn" onclick="toggleSolution('solution-variables')">Show/Hide Solution</button>
+                <div class="solution" id="solution-variables">
+                    <pre>
+// Define variables
+const firstName = "John";
+const lastName = "Doe";
+const age = 30;
+
+// Create greeting function
+function createGreeting(first, last, age) {
+    return `Hello, my name is ${first} ${last} and I am ${age} years old.`;
+}
+
+// Use the function
+const greeting = createGreeting(firstName, lastName, age);
+console.log(greeting);
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-variables">// Create your own variables and greeting function
+const firstName = "";
+const lastName = "";
+const age = 0;
+
+function createGreeting(first, last, age) {
+    // Your code here
+}
+
+// Test your function
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-variables', 'output-variables')">Run</button>
+                    <div class="output" id="output-variables"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">2. Functions</h3>
+                <p>Functions are blocks of code designed to perform a particular task:</p>
+                <pre>
+// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Arrow function (ES6)
+const greet = (name) => {
+    return "Hello, " + name + "!";
+};
+
+// Shorter arrow function
+const greet = name => `Hello, ${name}!`;
+
+// Function call
+console.log(greet("World"));  // Output: Hello, World!
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Function Types</h3>
+                <p>Create three versions of a function that calculates the area of a rectangle (width × height):</p>
+                <ol>
+                    <li>As a standard function declaration</li>
+                    <li>As an arrow function(After 2015 with ES6)</li>
+                    <li>As a one-line arrow function</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-functions')">Show/Hide Solution</button>
+                <div class="solution" id="solution-functions">
+                    <pre>
+// 1. Function declaration
+function calculateArea(width, height) {
+    return width * height;
+}
+
+// 2. Arrow function
+const calculateAreaArrow = (width, height) => {
+    return width * height;
+};
+
+// 3. One-line arrow function
+const calculateAreaOneLine = (width, height) => width * height;
+
+// Test all three
+console.log(calculateArea(5, 3));        // 15
+console.log(calculateAreaArrow(5, 3));   // 15
+console.log(calculateAreaOneLine(5, 3)); // 15
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-functions">// Create the three versions of the area function
+// 1. Function declaration
+
+// 2. Arrow function
+
+// 3. One-line arrow function
+
+// Test your functions with different dimensions
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-functions', 'output-functions')">Run</button>
+                    <div class="output" id="output-functions"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">3. Conditional Statements</h3>
+                <p>Conditional statements are used to perform different actions based on different conditions:</p>
+                <pre>
+// if-else statement
+let hour = 12;
+
+if (hour < 12) {
+    console.log("Good morning");
+} else if (hour < 18) {
+    console.log("Good afternoon");
+} else {
+    console.log("Good evening");
+}
+
+// Ternary operator
+let age = 20;
+let canVote = age >= 18 ? "Yes" : "No";
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Grade Calculator</h3>
+                <p>Write a function that takes a score (0-100) and returns the corresponding letter grade:</p>
+                <ul>
+                    <li>A: 90-100</li>
+                    <li>B: 80-89</li>
+                    <li>C: 70-79</li>
+                    <li>D: 60-69</li>
+                    <li>F: 0-59</li>
+                </ul>
+                <p>Implement this using both if-else statements and the ternary operator.</p>
+                <button class="solution-btn" onclick="toggleSolution('solution-conditionals')">Show/Hide
+                    Solution</button>
+                <div class="solution" id="solution-conditionals">
+                    <pre>
+// Using if-else
+function getGrade(score) {
+    if (score >= 90) {
+        return "A";
+    } else if (score >= 80) {
+        return "B";
+    } else if (score >= 70) {
+        return "C";
+    } else if (score >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+// Using nested ternary operators (more complex but shows the concept)
+function getGradeWithTernary(score) {
+    return score >= 90 ? "A" 
+         : score >= 80 ? "B"
+         : score >= 70 ? "C"
+         : score >= 60 ? "D"
+         : "F";
+}
+
+// Test both functions
+console.log(getGrade(95));            // A
+console.log(getGrade(82));            // B
+console.log(getGrade(71));            // C
+console.log(getGrade(65));            // D
+console.log(getGrade(35));            // F
+console.log(getGradeWithTernary(95)); // A
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-conditionals">// Implement the grade calculator function
+function getGrade(score) {
+    // Your code here
+}
+
+// Test with different scores
+console.log(getGrade(95));
+console.log(getGrade(82));
+console.log(getGrade(71));
+console.log(getGrade(65));
+console.log(getGrade(35));
+
+// Bonus: Try implementing with ternary operators
+</textarea>
+                    <button class="run-btn"
+                        onclick="runCode('playground-conditionals', 'output-conditionals')">Run</button>
+                    <div class="output" id="output-conditionals"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">4. Loops</h3>
+                <p>Loops are used to execute the same block of code multiple times:</p>
+                <pre>
+// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // Outputs 0, 1, 2, 3, 4
+}
+
+// While loop
+let i = 0;
+while (i < 5) {
+    console.log(i);  // Outputs 0, 1, 2, 3, 4
+    i++;
+}
+
+// For...of loop (for arrays)
+const fruits = ["apple", "banana", "cherry"];
+for (const fruit of fruits) {
+    console.log(fruit);  // Outputs each fruit
+}
+
+// For...in loop (for objects)
+const person = {name: "John", age: 30};
+for (const key in person) {
+    console.log(key + ": " + person[key]);
+}
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Loop Types</h3>
+                <p>Given an array of student objects with names and scores, write four different loops to find the
+                    highest scoring student:</p>
+                <ol>
+                    <li>Using a for loop</li>
+                    <li>Using a while loop</li>
+                    <li>Using for...of loop</li>
+                    <li>Using forEach method</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-loops')">Show/Hide Solution</button>
+                <div class="solution" id="solution-loops">
+                    <pre>
+const students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 92 },
+    { name: "Charlie", score: 78 },
+    { name: "David", score: 95 },
+    { name: "Emma", score: 88 }
+];
+
+// 1. Using a for loop
+function findHighestWithForLoop(students) {
+    let highest = students[0];
+    for (let i = 1; i < students.length; i++) {
+        if (students[i].score > highest.score) {
+            highest = students[i];
+        }
+    }
+    return highest;
+}
+
+// 2. Using a while loop
+function findHighestWithWhileLoop(students) {
+    let highest = students[0];
+    let i = 1;
+    while (i < students.length) {
+        if (students[i].score > highest.score) {
+            highest = students[i];
+        }
+        i++;
+    }
+    return highest;
+}
+
+// 3. Using for...of loop
+function findHighestWithForOf(students) {
+    let highest = students[0];
+    for (const student of students) {
+        if (student.score > highest.score) {
+            highest = student;
+        }
+    }
+    return highest;
+}
+
+// 4. Using forEach method
+function findHighestWithForEach(students) {
+    let highest = students[0];
+    students.forEach(student => {
+        if (student.score > highest.score) {
+            highest = student;
+        }
+    });
+    return highest;
+}
+
+// Test all four functions
+console.log(findHighestWithForLoop(students));    // { name: "David", score: 95 }
+console.log(findHighestWithWhileLoop(students));  // { name: "David", score: 95 }
+console.log(findHighestWithForOf(students));      // { name: "David", score: 95 }
+console.log(findHighestWithForEach(students));    // { name: "David", score: 95 }
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-loops">// Sample student data
+const students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 92 },
+    { name: "Charlie", score: 78 },
+    { name: "David", score: 95 },
+    { name: "Emma", score: 88 }
+];
+
+// Write your four loop implementations
+// 1. For loop
+function findHighestWithForLoop(students) {
+    // Your code here
+}
+
+// Test your functions
+console.log(findHighestWithForLoop(students));
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-loops', 'output-loops')">Run</button>
+                    <div class="output" id="output-loops"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">5. Array Methods</h3>
+                <p>JavaScript arrays have many useful built-in methods:</p>
+                <pre>
+const numbers = [1, 2, 3, 4, 5];
+
+// forEach - executes a function for each element
+numbers.forEach(number => console.log(number));
+
+// map - creates a new array with the results of calling a function
+const doubled = numbers.map(number => number * 2);
+// doubled: [2, 4, 6, 8, 10]
+
+// filter - creates a new array with elements that pass a test
+const even = numbers.filter(number => number % 2 === 0);
+// even: [2, 4]
+
+// reduce - reduces an array to a single value
+const sum = numbers.reduce((total, number) => total + number, 0);
+// sum: 15
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Array Methods</h3>
+                <p>Given an array of numbers, complete the following tasks using array methods:</p>
+                <ol>
+                    <li>Return an array with only even numbers</li>
+                    <li>Return the sum of all numbers</li>
+                    <li>Return an array with each number doubled</li>
+                    <li>Find the highest number in the array</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-array-methods')">Show/Hide
+                    Solution</button>
+                <div class="solution" id="solution-array-methods">
+                    <pre>
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Return even numbers using filter
+function getEvenNumbers(array) {
+    return array.filter(num => num % 2 === 0);
+}
+
+// Return sum of all numbers using reduce
+function getSum(array) {
+    return array.reduce((total, num) => total + num, 0);
+}
+
+// Return doubled numbers using map
+function getDoubledNumbers(array) {
+    return array.map(num => num * 2);
+}
+
+// Find highest number
+function getHighestNumber(array) {
+    return Math.max(...array);
+    // Alternative: return array.reduce((max, num) => num > max ? num : max, array[0]);
+}
+
+console.log("Even numbers:", getEvenNumbers(numbers));      // [2, 4, 6, 8, 10]
+console.log("Sum:", getSum(numbers));                       // 55
+console.log("Doubled numbers:", getDoubledNumbers(numbers)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+console.log("Highest number:", getHighestNumber(numbers));  // 10
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-array-methods">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Return even numbers
+function getEvenNumbers(array) {
+    // Your code here
+}
+
+// Return sum of all numbers
+function getSum(array) {
+    // Your code here 
+}
+
+// Return doubled numbers
+function getDoubledNumbers(array) {
+    // Your code here
+}
+
+// Find highest number
+function getHighestNumber(array) {
+    // Your code here
+}
+
+// Test your functions
+console.log("Even numbers:", getEvenNumbers(numbers));
+console.log("Sum:", getSum(numbers));
+console.log("Doubled numbers:", getDoubledNumbers(numbers));
+console.log("Highest number:", getHighestNumber(numbers));
+</textarea>
+                    <button class="run-btn"
+                        onclick="runCode('playground-array-methods', 'output-array-methods')">Run</button>
+                    <div class="output" id="output-array-methods"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">6. DOM Manipulation</h3>
+                <p>JavaScript can change HTML elements on your page:</p>
+                <pre>
+// Selecting elements
+const element = document.getElementById("myId");
+const elements = document.getElementsByClassName("myClass");
+const queryElement = document.querySelector(".myClass");
+
+// Changing content
+element.textContent = "New text";
+element.innerHTML = "<span>HTML content</span>";
+
+// Changing styles
+element.style.color = "red";
+element.classList.add("newClass");
+
+// Creating elements
+const newDiv = document.createElement("div");
+newDiv.textContent = "I'm new!";
+document.body.appendChild(newDiv);
+
+// Event listeners
+element.addEventListener("click", function() {
+    alert("Element was clicked!");
+});
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: DOM Manipulation</h3>
+                <p>Write code that:</p>
+                <ol>
+                    <li>Creates a button element</li>
+                    <li>Adds text to the button saying "Click Me"</li>
+                    <li>Adds an event listener that changes the page background color when clicked</li>
+                    <li>Appends the button to the body</li>
+                </ol>
+                <p>Note: To test this in the playground, the code needs to create a button within the output div.</p>
+                <button class="solution-btn" onclick="toggleSolution('solution-dom')">Show/Hide Solution</button>
+                <div class="solution" id="solution-dom">
+                    <pre>
+// Create button element
+const button = document.createElement("button");
+
+// Add text to button
+button.textContent = "Click Me";
+
+// Style the button
+button.style.padding = "10px 15px";
+button.style.backgroundColor = "#323330";
+button.style.color = "white";
+button.style.border = "none";
+button.style.borderRadius = "5px";
+button.style.cursor = "pointer";
+
+// Add event listener
+button.addEventListener("click", function() {
+    // Generate random color
+    const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = randomColor;
+});
+
+// Append button to body
+document.body.appendChild(button);
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-dom">// For this playground, we'll create a button that changes the output div's color
+function createButtonInOutput() {
+    // Get reference to output div
+    const outputDiv = document.getElementById('output-dom');
+    
+    // Create a button element
+    // Your code here
+    
+    // Add button text
+    // Your code here
+    
+    // Style the button
+    // Your code here
+    
+    // Add event listener to change background color
+    // Your code here
+    
+    // Append button to output div
+    // Your code here
+    
+    return "Button created! Click it to see the color change.";
+}
+
+createButtonInOutput();
+</textarea>
+                    <button class="run-btn" onclick="runDOMCode('playground-dom', 'output-dom')">Run</button>
+                    <div class="output" id="output-dom"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">7. Array/Object Destructuring</h3>
+                <p>Destructuring allows you to extract values from arrays or properties from objects into distinct
+                    variables:</p>
+                <pre>
+// Array destructuring
+const colors = ["red", "green", "blue"];
+const [firstColor, secondColor, thirdColor] = colors;
+console.log(firstColor);  // "red"
+
+// Skipping elements
+const [first, , third] = colors;
+console.log(third);  // "blue"
+
+// With default values
+const [primary = "cyan", secondary = "magenta"] = ["yellow"];
+console.log(secondary);  // "magenta" (default value)
+
+// Object destructuring
+const person = { name: "John", age: 30, city: "New York" };
+const { name, age } = person;
+console.log(name, age);  // "John" 30
+
+// With different variable names
+const { name: fullName, age: years } = person;
+console.log(fullName, years);  // "John" 30
+
+// Nested destructuring
+const user = {
+    id: 1,
+    details: {
+        firstName: "John",
+        lastName: "Doe"
+    }
+};
+const { details: { firstName, lastName } } = user;
+console.log(firstName, lastName);  // "John" "Doe"
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Object Destructuring</h3>
+                <p>Given an object containing information about a product (name, price, category, tags, availability),
+                    use destructuring to extract the data and display a formatted description.</p>
+                <button class="solution-btn" onclick="toggleSolution('solution-destructuring')">Show/Hide
+                    Solution</button>
+                <div class="solution" id="solution-destructuring">
+                    <pre>
+// Product object
+const product = {
+    name: "Smartphone",
+    price: 699.99,
+    category: "Electronics",
+    tags: ["technology", "mobile", "communication"],
+    details: {
+        brand: "TechCo",
+        model: "X100",
+        year: 2023
+    },
+    availability: true
+};
+
+// Use object destructuring
+function formatProductDescription(product) {
+    // Basic destructuring
+    const { name, price, category, availability } = product;
+    
+    // Nested destructuring
+    const { details: { brand, model, year } } = product;
+    
+    // Destructuring with default value
+    const { tags = [] } = product;
+    
+    // Format the description
+    return `
+        Product: ${name} (${brand} ${model})
+        Price: $${price}
+        Category: ${category}
+        Year: ${year}
+        Tags: ${tags.join(", ")}
+        ${availability ? "In Stock" : "Out of Stock"}
+    `;
+}
+
+console.log(formatProductDescription(product));
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-destructuring">// Product object
+const product = {
+    name: "Smartphone",
+    price: 699.99,
+    category: "Electronics",
+    tags: ["technology", "mobile", "communication"],
+    details: {
+        brand: "TechCo",
+        model: "X100",
+        year: 2023
+    },
+    availability: true
+};
+
+// Create a function to format product description using destructuring
+function formatProductDescription(product) {
+    // Your code here - use destructuring to extract all needed properties
+    
+    
+    // Return a formatted string with the product information
+    
+}
+
+// Test your function
+console.log(formatProductDescription(product));
+</textarea>
+                    <button class="run-btn"
+                        onclick="runCode('playground-destructuring', 'output-destructuring')">Run</button>
+                    <div class="output" id="output-destructuring"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">8. Built-in Methods</h3>
+                <p>JavaScript has many built-in methods for strings, numbers, and more:</p>
+                <pre>
+// String methods
+const str = "Hello, World!";
+console.log(str.length);           // 13
+console.log(str.toUpperCase());    // "HELLO, WORLD!"
+console.log(str.toLowerCase());    // "hello, world!"
+console.log(str.indexOf("World"));  // 7
+console.log(str.slice(0, 5));      // "Hello"
+console.log(str.replace("World", "JavaScript"));  // "Hello, JavaScript!"
+console.log(str.split(", "));      // ["Hello", "World!"]
+
+// Number methods
+const num = 123.456;
+console.log(num.toFixed(2));       // "123.46" (string)
+console.log(num.toPrecision(4));   // "123.5" (string)
+console.log(Number.isInteger(num)); // false
+console.log(Number.parseInt("42px"));  // 42
+console.log(Number.parseFloat("3.14"));  // 3.14
+
+// Math methods
+console.log(Math.round(4.7));      // 5
+console.log(Math.floor(4.7));      // 4
+console.log(Math.ceil(4.1));       // 5
+console.log(Math.max(1, 3, 2));    // 3
+console.log(Math.min(1, 3, 2));    // 1
+console.log(Math.random());        // random number between 0 and 1
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: String and Number Methods</h3>
+                <p>Create a function that takes a sentence and:</p>
+                <ol>
+                    <li>Converts it to title case (first letter of each word capitalized)</li>
+                    <li>Counts the number of words</li>
+                    <li>Returns the average word length (rounded to 2 decimal places)</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-methods')">Show/Hide Solution</button>
+                <div class="solution" id="solution-methods">
+                    <pre>
+function analyzeSentence(sentence) {
+    // Remove extra spaces and split into words
+    const words = sentence.trim().split(/\s+/);
+    
+    // Convert to title case
+    const titleCase = words.map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }).join(" ");
+    
+    // Count the number of words
+    const wordCount = words.length;
+    
+    // Calculate average word length
+    let totalLength = 0;
+    words.forEach(word => {
+        totalLength += word.length;
+    });
+    const averageLength = (totalLength / wordCount).toFixed(2);
+    
+    return {
+        titleCase,
+        wordCount,
+        averageLength
+    };
+}
+
+// Example usage
+const analysis = analyzeSentence("javascript is a powerful programming language");
+console.log("Title Case:", analysis.titleCase);
+console.log("Word Count:", analysis.wordCount);
+console.log("Average Word Length:", analysis.averageLength);
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-methods">// Create a function to analyze a sentence
+function analyzeSentence(sentence) {
+    // Your code here to:
+    // 1. Convert to title case
+    // 2. Count words
+    // 3. Calculate average word length
+    
+    return {
+        // Your results
+    };
+}
+
+// Test with these sentences
+console.log(analyzeSentence("javascript is a powerful programming language"));
+console.log(analyzeSentence("the quick brown fox jumps over the lazy dog"));
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-methods', 'output-methods')">Run</button>
+                    <div class="output" id="output-methods"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">9. Dates</h3>
+                <p>Working with dates in JavaScript using the Date object:</p>
+                <pre>
+// Creating date objects
+const now = new Date();  // Current date and time
+const specificDate = new Date("2023-01-15");  // January 15, 2023
+const dateWithParts = new Date(2023, 0, 15);  // January 15, 2023 (month is 0-based)
+
+// Getting date components
+console.log(now.getFullYear());    // e.g., 2023
+console.log(now.getMonth());       // 0-11 (0 = January)
+console.log(now.getDate());        // 1-31
+console.log(now.getDay());         // 0-6 (0 = Sunday)
+console.log(now.getHours());       // 0-23
+console.log(now.getMinutes());     // 0-59
+console.log(now.getSeconds());     // 0-59
+
+// Setting date components
+now.setFullYear(2024);
+now.setMonth(11);  // December
+now.setDate(31);
+
+// Formatting dates
+console.log(now.toString());       // Full date string
+console.log(now.toDateString());   // Date portion only
+console.log(now.toTimeString());   // Time portion only
+console.log(now.toISOString());    // ISO format
+
+// Date operations
+const date1 = new Date("2023-01-01");
+const date2 = new Date("2023-02-01");
+const diffTime = date2 - date1;  // Difference in milliseconds
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));  // Convert to days
+console.log(diffDays);  // 31
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Working with Dates</h3>
+                <p>Create a function that takes a birthdate (as a string) and calculates:</p>
+                <ol>
+                    <li>The person's current age in years</li>
+                    <li>How many days until their next birthday</li>
+                    <li>Whether their birth year was a leap year</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-dates')">Show/Hide Solution</button>
+                <div class="solution" id="solution-dates">
+                    <pre>
+function analyzeBirthdate(birthdateStr) {
+    // Parse the birthdate
+    const birthdate = new Date(birthdateStr);
+    const today = new Date();
+    
+    // 1. Calculate current age
+    let age = today.getFullYear() - birthdate.getFullYear();
+    const hasBirthdayOccurredThisYear = 
+        today.getMonth() > birthdate.getMonth() || 
+        (today.getMonth() === birthdate.getMonth() && today.getDate() >= birthdate.getDate());
+    
+    if (!hasBirthdayOccurredThisYear) {
+        age--;
+    }
+    
+    // 2. Calculate days until next birthday
+    const nextBirthday = new Date(today.getFullYear(), birthdate.getMonth(), birthdate.getDate());
+    
+    // If birthday has occurred this year, calculate for next year
+    if (hasBirthdayOccurredThisYear) {
+        nextBirthday.setFullYear(today.getFullYear() + 1);
+    }
+    
+    // Calculate the difference in days
+    const daysToBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+    
+    // 3. Check if birth year was a leap year
+    const birthYear = birthdate.getFullYear();
+    const isLeapYear = (birthYear % 4 === 0 && birthYear % 100 !== 0) || (birthYear % 400 === 0);
+    
+    return {
+        age,
+        daysToBirthday,
+        isLeapYear
+    };
+}
+
+// Example usage
+const birthdateInfo = analyzeBirthdate("1990-05-15");
+console.log(`Age: ${birthdateInfo.age} years`);
+console.log(`Days until next birthday: ${birthdateInfo.daysToBirthday}`);
+console.log(`Born in a leap year: ${birthdateInfo.isLeapYear ? "Yes" : "No"}`);
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-dates">// Create the birthdate analyzer function
+function analyzeBirthdate(birthdateStr) {
+    // Your code here
+    
+    return {
+        // Return age, days to next birthday, and leap year status
+    };
+}
+
+// Test with your own birthdate (or any date)
+// Format: YYYY-MM-DD
+const result = analyzeBirthdate("1990-05-15");
+console.log(`Age: ${result.age} years`);
+console.log(`Days until next birthday: ${result.daysToBirthday}`);
+console.log(`Born in a leap year: ${result.isLeapYear ? "Yes" : "No"}`);
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-dates', 'output-dates')">Run</button>
+                    <div class="output" id="output-dates"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">10. Regex (Regular Expressions)</h3>
+                <p>Regular expressions are patterns used to match character combinations in strings:</p>
+                <pre>
+// Creating regex
+const pattern1 = /hello/;          // Literal notation
+const pattern2 = new RegExp("hello");  // Constructor
+
+// Basic patterns
+const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const urlPattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+
+// Regex methods
+const text = "Hello, my email is john@example.com";
+const regex = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+
+console.log(regex.test(text));  // true - returns boolean
+console.log(text.match(regex));  // ["john@example.com"] - returns match info
+
+// Replacing with regex
+const censored = text.replace(/john@example\.com/, "***@***");
+console.log(censored);  // "Hello, my email is ***@***"
+
+// Common flags
+// g - global (find all matches, not just the first)
+// i - case-insensitive
+// m - multiline
+const globalRegex = /a/g;
+const insensitiveRegex = /hello/i;
+
+console.log("banana".match(globalRegex));  // ["a", "a", "a"]
+console.log("Hello".match(insensitiveRegex));  // ["Hello"]
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Regex Validation</h3>
+                <p>Create a form validation function that checks:</p>
+                <ol>
+                    <li>If an email address is valid</li>
+                    <li>If a password meets security requirements (min 8 chars, containing uppercase, lowercase, number,
+                        and symbol)</li>
+                    <li>If a phone number is in a valid format (e.g., (123) 456-7890 or 123-456-7890)</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-regex')">Show/Hide Solution</button>
+                <div class="solution" id="solution-regex">
+                    <pre>
+function validateForm(email, password, phone) {
+    const validations = {
+        email: {
+            isValid: false,
+            message: ""
+        },
+        password: {
+            isValid: false,
+            message: ""
+        },
+        phone: {
+            isValid: false,
+            message: ""
+        }
+    };
+    
+    // Email validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (emailRegex.test(email)) {
+        validations.email.isValid = true;
+    } else {
+        validations.email.message = "Please enter a valid email address";
+    }
+    
+    // Password validation
+    const passwordStrengthRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (passwordStrengthRegex.test(password)) {
+        validations.password.isValid = true;
+    } else {
+        validations.password.message = "Password must be at least 8 characters and contain uppercase, lowercase, number, and symbol";
+    }
+    
+    // Phone validation (US format)
+    const phoneRegex = /^(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/;
+    if (phoneRegex.test(phone)) {
+        validations.phone.isValid = true;
+    } else {
+        validations.phone.message = "Please enter a valid phone number";
+    }
+    
+    return validations;
+}
+
+// Example usage
+const formResult = validateForm(
+    "user@example.com", 
+    "Passw0rd!", 
+    "(123) 456-7890"
+);
+
+console.log("Email validation:", formResult.email);
+console.log("Password validation:", formResult.password);
+console.log("Phone validation:", formResult.phone);
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-regex">// Create the form validation function
+function validateForm(email, password, phone) {
+    // Your validation code here
+    
+    return {
+        // Return validation results
+    };
+}
+
+// Test with various inputs
+console.log(validateForm(
+    "user@example.com", 
+    "Passw0rd!", 
+    "(123) 456-7890"
+));
+
+// Try with invalid inputs
+console.log(validateForm(
+    "not-an-email", 
+    "password", 
+    "123"
+));
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-regex', 'output-regex')">Run</button>
+                    <div class="output" id="output-regex"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-group">
+            <div class="concept">
+                <h3 class="concept-title">11. Type Conversions</h3>
+                <p>Converting data from one type to another:</p>
+                <pre>
+// String to Number
+const strNum = "42";
+console.log(Number(strNum));       // 42
+console.log(parseInt(strNum));     // 42
+console.log(parseFloat("3.14"));   // 3.14
+console.log(+"42");                // 42 (unary plus operator)
+
+// Number to String
+const num = 42;
+console.log(String(num));          // "42"
+console.log(num.toString());       // "42"
+console.log(`${num}`);             // "42" (template literal)
+console.log(num + "");             // "42" (concatenation)
+
+// Boolean to String/Number
+console.log(String(true));         // "true"
+console.log(Number(true));         // 1
+console.log(Number(false));        // 0
+
+// To Boolean
+console.log(Boolean(1));           // true
+console.log(Boolean(0));           // false
+console.log(Boolean(""));          // false
+console.log(Boolean("hello"));     // true
+console.log(Boolean(null));        // false
+console.log(Boolean(undefined));   // false
+console.log(!!"hello");            // true (double not operator)
+
+// Implicit conversion
+console.log("5" + 3);              // "53" (string concatenation)
+console.log("5" - 3);              // 2 (numeric subtraction)
+console.log("5" * "3");            // 15 (numeric multiplication)
+                </pre>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise: Type Conversion Functions</h3>
+                <p>Create functions that:</p>
+                <ol>
+                    <li>Takes any input and returns its proper numerical value (or NaN if not convertible)</li>
+                    <li>Converts a CSV string to an array of objects with the correct data types</li>
+                    <li>Converts any input to a boolean according to JavaScript's truthy/falsy rules</li>
+                </ol>
+                <button class="solution-btn" onclick="toggleSolution('solution-conversion')">Show/Hide Solution</button>
+                <div class="solution" id="solution-conversion">
+                    <pre>
+// 1. Convert to number
+function toNumber(value) {
+    // Handle special cases
+    if (value === null) return 0;
+    if (value === true) return 1;
+    if (value === false) return 0;
+    if (Array.isArray(value) && value.length === 0) return 0;
+    if (Array.isArray(value) && value.length === 1) {
+        // Try to convert single element array
+        return toNumber(value[0]);
+    }
+    
+    // Use Number() for regular conversion
+    return Number(value);
+}
+
+// 2. CSV to objects with correct types
+function csvToObjects(csvString, autoDetectTypes = true) {
+    // Split by lines and get headers
+    const lines = csvString.trim().split('\n');
+    const headers = lines[0].split(',').map(header => header.trim());
+    
+    // Process data rows
+    const result = [];
+    for (let i = 1; i < lines.length; i++) {
+        const values = lines[i].split(',').map(val => val.trim());
+        const obj = {};
+        
+        headers.forEach((header, index) => {
+            let value = values[index];
+            
+            // Auto-detect and convert types if requested
+            if (autoDetectTypes) {
+                // Check if numeric
+                if (/^-?\d+(\.\d+)?$/.test(value)) {
+                    value = parseFloat(value);
+                }
+                // Check if boolean
+                else if (value.toLowerCase() === 'true') {
+                    value = true;
+                }
+                else if (value.toLowerCase() === 'false') {
+                    value = false;
+                }
+                // Check if date (ISO format)
+                else if (/^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2})?/.test(value)) {
+                    value = new Date(value);
+                }
+            }
+            
+            obj[header] = value;
+        });
+        
+        result.push(obj);
+    }
+    
+    return result;
+}
+
+// 3. Convert to boolean
+function toBoolean(value) {
+    // This uses JavaScript's native truthy/falsy conversion
+    return !!value;
+}
+
+// Example usage
+console.log(toNumber("42"));      // 42
+console.log(toNumber("3.14"));    // 3.14
+console.log(toNumber("Hello"));   // NaN
+console.log(toNumber([5]));       // 5
+console.log(toNumber([]));        // 0
+console.log(toNumber(null));      // 0
+
+const csvData = 
+`name,age,active,joined
+John Doe,32,true,2022-01-15
+Jane Smith,28,false,2021-11-20`;
+
+console.log(csvToObjects(csvData));
+
+console.log(toBoolean(1));        // true
+console.log(toBoolean(0));        // false
+console.log(toBoolean(""));       // false
+console.log(toBoolean("false"));  // true (non-empty string)
+console.log(toBoolean([]));       // true
+console.log(toBoolean(null));     // false
+                    </pre>
+                </div>
+                <div class="try-it">
+                    <h4>Try It Yourself</h4>
+                    <textarea class="playground" id="playground-conversion">// Implement the type conversion functions
+
+// 1. Convert any value to a number
+function toNumber(value) {
+    // Your code here
+}
+
+// 2. Convert CSV string to objects with correct types
+function csvToObjects(csvString) {
+    // Your code here
+}
+
+// 3. Convert any value to boolean based on truthy/falsy rules
+function toBoolean(value) {
+    // Your code here
+}
+
+// Test the functions
+console.log("Number conversions:");
+console.log(toNumber("42"));
+console.log(toNumber("3.14"));
+console.log(toNumber("Hello"));
+console.log(toNumber([5]));
+
+// Test CSV conversion with this sample data
+const csvData = 
+`name,age,active,joined
+John Doe,32,true,2022-01-15
+Jane Smith,28,false,2021-11-20`;
+
+console.log("CSV conversion:");
+console.log(csvToObjects(csvData));
+
+console.log("Boolean conversions:");
+console.log(toBoolean(1));
+console.log(toBoolean(0));
+console.log(toBoolean(""));
+console.log(toBoolean("false"));
+</textarea>
+                    <button class="run-btn" onclick="runCode('playground-conversion', 'output-conversion')">Run</button>
+                    <div class="output" id="output-conversion"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <p>Dijitart Developers 2025</p>
+    </footer>
+   <script src="main.js"></script>
+</body>
+
+</html>
